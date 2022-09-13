@@ -19,11 +19,11 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    @ParameterizedTest
+   @ParameterizedTest
     @CsvFileSource(files = "src/test/resources/shouldNextRadioStation.csv")
 
-    public void shouldNextRadioStation(int expected, int newCurrentRadioStation, int maxRadioStation) {
-        Radio station = new Radio(maxRadioStation);
+    public void shouldNextRadioStation(int expected, int newCurrentRadioStation, int numberOfRadioStation) {
+        Radio station = new Radio(numberOfRadioStation);
         station.currentRadioStation = newCurrentRadioStation;
         station.next();
         int actual = station.currentRadioStation;
@@ -32,7 +32,7 @@ public class RadioTest {
 
     }
 
-    @ParameterizedTest
+   @ParameterizedTest
     @CsvFileSource(files = "src/test/resources/shouldPrevRadioStationDefault.csv")
     public void shouldPervRadioStationDefault(int expected, int newCurrentRadioStation) {
         Radio station = new Radio();
@@ -45,8 +45,8 @@ public class RadioTest {
 
     @ParameterizedTest
     @CsvFileSource(files = "src/test/resources/shouldPrevRadioStation.csv")
-    public void shouldPervRadioStation(int expected, int newCurrentRadioStation, int maxRadioStation) {
-        Radio station = new Radio(maxRadioStation);
+    public void shouldPervRadioStation(int expected, int newCurrentRadioStation, int numberOfRadioStation) {
+        Radio station = new Radio(numberOfRadioStation);
         station.currentRadioStation = newCurrentRadioStation;
         station.prev();
         int actual = station.currentRadioStation;
@@ -67,8 +67,8 @@ public class RadioTest {
 
     @ParameterizedTest
     @CsvFileSource(files = "src/test/resources/shouldSetRadioStation.csv")
-    public void shouldSetRadioStation(int expected, int newCurrentRadioStation, int maxRadioStation) {
-        Radio station = new Radio(maxRadioStation);
+    public void shouldSetRadioStation(int expected, int newCurrentRadioStation, int numberOfRadioStation) {
+        Radio station = new Radio(numberOfRadioStation);
         station.setCurrentRadioStation(newCurrentRadioStation);
         int actual = station.getCurrentRadioStation();
 

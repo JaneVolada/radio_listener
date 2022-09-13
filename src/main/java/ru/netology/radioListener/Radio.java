@@ -8,15 +8,15 @@ public class Radio {
     private int maxCurrentVolume = 100;
     protected int currentVolume = minCurrentVolume;
 
-    public Radio(int maxCurrentRadioStation) {
-        if (maxCurrentRadioStation < minCurrentRadioStation) {
+    public Radio(int numberOfCurrentRadioStation) {
+        if (numberOfCurrentRadioStation <= minCurrentRadioStation) {
             this.maxCurrentRadioStation = minCurrentRadioStation;
             return;
         }
-        if (maxCurrentRadioStation > this.maxCurrentRadioStation) {
+        if (numberOfCurrentRadioStation > this.maxCurrentRadioStation) {
             this.maxCurrentRadioStation = minCurrentRadioStation;
         } else {
-            this.maxCurrentRadioStation = maxCurrentRadioStation;
+            this.maxCurrentRadioStation = numberOfCurrentRadioStation - 1;
         }
     }
 
